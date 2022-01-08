@@ -8,23 +8,36 @@ FOG-Crawl is presentation software for "Fog of War" and Exploration: a javascrip
 * FOG-Crawl is not a Virtual Table Top, but it shares many of the same features.
 * FOG-Crawl is not networked, but it is online wherever you put it.
 * FOG-Crawl is a View for the game master to Show the players as they explore.
-* 
+
 # How to use:
 * The base version is here https://utmostgames.github.io/ but it doesn't have YOUR maps, yet.
 * Take a look at the sample CHAR.JSON file, then Crawl around for a little bit *(hit 'c' to enter Character Mode and you can click around)*.
 * When you see what's going on, export the CHAR.JSON file and supply the image paths and character names for your party. Import, test it out.
-* Import your map. Size it. Center it.
-* That's it, really. There are a few key commands. Better documentation on that is incoming. *(Hit 't' in character mode and click down the hallway!)*
+* Import your map. Size it. Center it. Skip the regions til you're ready.
+* That's it, really. There are a few key commands while you Crawl. Better documentation on that is incoming. *(Hit 't' in character mode and click down the hallway!)*
 
 
-# RECOMMENDED:
+## RECOMMENDED:
 
-* Clone me to [YourOwnCampaigns].github.io: this will allow you to keep your own version and more importantly host images on the same domain and pull my upgrades. If you have your own domain, please go for it. FOG-Crawl works best with map images on the same domain!
+* __Clone me to [YourOwnCampaigns].github.io:__ this will allow you to keep your own version and more importantly host images on the same domain and pull my upgrades. If you have your own domain, please go for it. FOG-Crawl works best with map images on the same domain!
 
-* Digitize your map: I used GIMP and a photograph of a hand-drawn dungeon, and turned all the impassable terrain to transparency. Then I Exported the Path as an SVG file with a stroke and fill. FOG-Crawl is designed to ALLOW player positioning on filled areas and DISALLOW it on unfilled. *It is an enourmous hassle and RAM usage to use an HTML5 Canvas element, so that means all PNG and JPG files are treated as fully filled. If you have a large walkable area such as outdoors, or are used to other VTTs, you won't know what you're missing until you try a huge SVG!*
+* __Digitize your map:__ I used GIMP and a photograph of a hand-drawn dungeon, and turned all the impassable terrain to transparency. Then I Exported the Path as an SVG file with a stroke and fill. FOG-Crawl is designed to ALLOW player positioning on filled areas and DISALLOW it on unfilled. *It is an enourmous hassle and RAM usage to use an HTML5 Canvas element, so that means all PNG and JPG files are treated as fully filled. If you have a large walkable area such as outdoors, or are used to other VTTs, you won't know what you're missing until you try a huge SVG!*
 
-* Host your campaign map on the same domain as your copy of FOG-Crawl: the aforementioned [YourOwnCampaigns].github.io, or anywhere else you host this javascript and html. Unfortunately, almost every image host you can use has Cross-Origin Resource Security policies in place. This means that even if you Digitized Your Map to a cool SVG as above, you have to host it on an 'opened' domain, and I didn't find any. The workaround is Same-Origin for your SVG. Just upload it to your github.io and path to it in the config!
+* __Host your campaign map on the same domain as your copy of FOG-Crawl:__ the aforementioned [YourOwnCampaigns].github.io, or anywhere else you host this javascript and html. Unfortunately, almost every image host you can use has Cross-Origin Resource Security policies in place. This means that even if you Digitized Your Map to a cool SVG as above, you have to host it on an 'opened' domain, and I didn't find any. The workaround is Same-Origin for your SVG. Just upload it to your github.io and path to it in the config!
 
-* Speaking of the config: there are TWO json files: CHAR.JSON for characters and CONFIG.JSON for everything else. Cross-Origin again, but you can paste into the application, or just host your JSON on your github.io!
+* __Speaking of the config:__ there are TWO json files: _CHAR.JSON_ for characters and _CONFIG.JSON_ for everything else. Cross-Origin again, but you can paste into the application, or just host your JSON on your github.io!
 
 *FOG-Crawl is very alpha right now. I threw it together and got it stable enough to solicit feature suggestions. So contribute additional functionality you'd like to see; but please remember the idea here is that with an exported campaign JSON, this is a stateless application.*
+
+# FOG The Requests for Comment:
+
+### FOG 1 - Character Tokens: a schema for top-down characer tokens
+```
+{
+    "name":STRING,      // Display name of character
+    "src":URI,          // URI of image file for top-down token
+    "face":STRING,      // Optional; cardinal direction, capitalized, of the facing of the image file in above URI. Default is "N" for "north/upward"
+    "square":INT,       // Optional; pixel size of the image file in above URI. Default is 20 pixels value
+    "special":[STRING]  // Optional; string array of lowercase Keywords for functional changes. Ex: "infra" changes default lighting color for character
+}
+```
