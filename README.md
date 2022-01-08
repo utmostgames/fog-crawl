@@ -18,7 +18,7 @@ RECOMMENDED:
 * Speaking of the config: there are TWO json files: CHAR.JSON for characters and CONFIG.JSON for everything else. Cross-Origin again, but you can paste into the application, or just host your JSON on your github.io!
 
 # How to use:
-* The base version is here https://utmostgames.github.io/ but it doesn't have YOUR maps.
+* The base version is here https://utmostgames.github.io/ but it doesn't have YOUR maps, yet.
 * Take a look at the sample CHAR.JSON file, then Crawl around for a little bit *(hit 'c' to enter Character Mode and you can click around)*.
 * When you see what's going on, export the CHAR.JSON file and supply the image paths and character names for your party. Import, test it out.
 * Import your map. Size it. Center it.
